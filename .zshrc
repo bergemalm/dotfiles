@@ -25,6 +25,7 @@ export BRAINHUB="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/bra
 alias bh='cd ${BRAINHUB}'
 alias in='cd ${BRAINHUB}/0-inbox'
 alias dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
+alias v='nvim'
 
 # PATH for the Google Cloud SDK
 if [ -f '/Users/mikber/Downloads/google-cloud-sdk/path.zsh.inc' ]; then
