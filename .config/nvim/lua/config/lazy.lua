@@ -18,12 +18,6 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- add Codeium
-    { import = "lazyvim.plugins.extras.coding.codeium" },
-    -- add Terraform
-    { import = "lazyvim.plugins.extras.lang.terraform" },
-    -- add Go
-    { import = "lazyvim.plugins.extras.lang.go" },
     -- import/override with your plugins
     { import = "plugins" },
   },
