@@ -5,6 +5,11 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting pass kubectl)
 source ${ZSH}/oh-my-zsh.sh
 
+# Other configs
+if [ -d "${HOME}/.zshrc.d" ]; then
+  source ${HOME}/.zshrc.d/*
+fi
+
 # Edit mode
 set -o vi
 
@@ -26,6 +31,7 @@ alias bh='cd ${BRAINHUB}'
 alias in='cd ${BRAINHUB}/0-inbox'
 alias dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias v='nvim'
+alias cd-root='cd $(git rev-parse --show-toplevel)'
 
 # PATH for the Google Cloud SDK
 if [ -f '/Users/mikber/Downloads/google-cloud-sdk/path.zsh.inc' ]; then
@@ -40,7 +46,7 @@ fi
 # More Google Cloud SDK stuff
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
-export CLOUDSDK_PYTHON=python3.12
+export CLOUDSDK_PYTHON=python3.13
 
 # Add go bin to path
 export PATH=${PATH}:~/go/bin

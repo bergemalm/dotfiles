@@ -16,6 +16,7 @@ mouse-hide-while-typing = true
 copy-on-select = true
 # custom-shader = shaders/underwater.glsl
 quit-after-last-window-closed = true
+term=xterm-256color
 
 # Mac
 macos-non-native-fullscreen = visible-menu
@@ -23,3 +24,4 @@ macos-non-native-fullscreen = visible-menu
 
 # keybindings
 keybind = global:cmd+/=toggle_quick_terminal
+
