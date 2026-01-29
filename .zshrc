@@ -2,16 +2,13 @@
 export ZSH="/Users/mikber/.oh-my-zsh"
 ZSH_THEME=""
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting pass kubectl)
+plugins=(git zsh-vi-mode zsh-autosuggestions zsh-syntax-highlighting pass kubectl)
 source ${ZSH}/oh-my-zsh.sh
 
 # Other configs
 if [ -d "${HOME}/.zshrc.d" ]; then
   source ${HOME}/.zshrc.d/*
 fi
-
-# Edit mode
-set -o vi
 
 export LANG=en_US.UTF-8
 
@@ -32,6 +29,8 @@ alias in='cd ${BRAINHUB}/0-inbox'
 alias dotfiles='/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}'
 alias v='nvim'
 alias cd-root='cd $(git rev-parse --show-toplevel)'
+alias kubectl=kubecolor
+compdef kubecolor=kubectl
 
 # PATH for the Google Cloud SDK
 if [ -f '/Users/mikber/Downloads/google-cloud-sdk/path.zsh.inc' ]; then
@@ -50,6 +49,10 @@ export CLOUDSDK_PYTHON=python3.13
 
 # Add go bin to path
 export PATH=${PATH}:~/go/bin
+
+# Backups
+export RESTIC_REPOSITORY=$(< ~/.restic_repository)
+export RESTIC_PASSWORD=$(< ~/.restic_password)
 
 # starship
 # Check that the function `starship_zle-keymap-select()` is defined.
